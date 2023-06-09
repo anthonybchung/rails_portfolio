@@ -3,4 +3,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  root "static_pages#home"
+
+  # static_pages
+  get '/playground',to: 'static_pages#playground'
+  get '/resources',to: 'static_pages#resources'
+  get '/login',to: 'static_pages#login'
 end

@@ -1,0 +1,24 @@
+<header class="bg-gray-600 text-gray-950 flex align-middle w-full h-8 md:h-9">
+	<nav class="w-full md:px-1 md:max-w-5xl m-auto flex flex-row justify-between">
+		<!--Logo-Company-->
+		<%= link_to root_path do %>
+			ABChungStack
+		<% end %>
+
+		<!--	menu button-->
+		<%= button_tag type: 'button', class: 'md:hidden' do %>
+			<svg class="fill-gray-950" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M4 18H20C20.55 18 21 17.55 21 17C21 16.45 20.55 16 20 16H4C3.45 16 3 16.45 3 17C3 17.55 3.45 18 4 18ZM4 13H20C20.55 13 21 12.55 21 12C21 11.45 20.55 11 20 11H4C3.45 11 3 11.45 3 12C3 12.55 3.45 13 4 13ZM3 7C3 7.55 3.45 8 4 8H20C20.55 8 21 7.55 21 7C21 6.45 20.55 6 20 6H4C3.45 6 3 6.45 3 7Z" fill-opacity="0.54"/>
+			</svg>
+		<% end %>
+
+		<!--menu list-->
+		<ul class="flex flex-col absolute mt-7 ml-0 w-full md:relative md:flex-row text-gray-500 bg-gray-600 md:bg-transparent">
+			<li class="my-3 mr-4 md:my-0 md:mx-8 text-right"><%= link_to_unless_current('Playground', playground_path, class: "text-gray-50 text-right") %></li>
+			<li class="my-3 mr-4 md:my-0 md:mx-8 text-right"><%= link_to_unless_current('Resources', resources_path, class: "text-gray-50 ") %></li>
+			<li class="my-3 mr-4 md:my-0 md:mx-8 text-right"><%= link_to_unless_current('Login', login_path, class: "text-gray-50") %></li>
+		</ul>
+	</nav>
+
+
+</header>
