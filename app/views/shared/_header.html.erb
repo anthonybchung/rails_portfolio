@@ -13,7 +13,7 @@
 		<% end %>
 
 <!--		menu list-->
-		<ul class="flex flex-col absolute mt-7 ml-0 w-full overflow-hidden transition-all duration-300 md:static md:w-auto md:mt-auto  md:mr-0 md:flex-row text-gray-500 bg-gray-600 md:bg-transparent md:h-auto" data-nav-target="menuList">
+		<ul class="flex flex-col absolute mt-7 ml-0 w-full z-50 overflow-hidden transition-all duration-300 md:static md:w-auto md:mt-auto  md:mr-0 md:flex-row text-gray-500 bg-gray-600 md:bg-transparent md:h-auto" data-nav-target="menuList">
 			<li class="my-3 mr-4 md:my-0 md:mx-8 text-right"><%= link_to_unless_current('Playground', playground_path, class: "text-gray-50 text-right") %></li>
 			<li class="my-3 mr-4 md:my-0 md:mx-8 text-right"><%= link_to_unless_current('Resources', resources_path, class: "text-gray-50 ") %></li>
 			<li class="my-3 mr-4 md:my-0 md:mx-8 text-right"><%= link_to_unless_current('Login', login_path, class: "text-gray-50") %></li>
