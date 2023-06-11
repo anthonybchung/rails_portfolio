@@ -1,0 +1,6 @@
+class ChangeCategoryTypeInProjects < ActiveRecord::Migration[7.0]
+  def change
+    remove_column :projects, :category
+    add_column :projects,:category,:integer
+  end
+end

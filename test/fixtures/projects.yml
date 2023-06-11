@@ -4,14 +4,14 @@ one:
   name: MyString
   description: MyText
   position: 1
-  github: MyString
+  github: https://github.com/anthonybchung/hotwire_search
   category: MyString
   on_main_page: false
 
 two:
-  name: MyString
+  name: MyString2
   description: MyText
   position: 1
-  github: MyString
+  github: https://github.com/anthonybchung/hotwire_navbar
   category: MyString
   on_main_page: false
