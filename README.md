@@ -32,7 +32,26 @@ built. Also what resources I have watched or read.
 - position: can rearrange the order of exercise to list on the page.
 - github: link to github.
 - category: enum[ruby,rails,javascript]
-- on_main_page: if true, it will be presented on the home page.
+- on_main_page: if true, it will be presented on the home page. default value is ***true***
+
+#### Controller:
+
+##### Projects
+
+CRUD: views
+
+| URI                | controller#action | Verb   |
+|:-------------------|:------------------|:-------|
+| /projects          | projects#index    | GET    |
+| /projects          | projects#create   | POST   |
+| /projects/new      | projects#new      | GET    |
+| /projects/:id/edit | projects#edit     | GET    |
+| /projects/:id      | projects#show     | GET    |
+| /projects/:id      | projects#update   | PATCH  |
+| /projects/:id      | projects#udate    | PUT    |
+| /projects/:id      | project#destroy   | DELETE |
+
+
 
 
 

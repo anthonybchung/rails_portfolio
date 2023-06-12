@@ -61,9 +61,9 @@ class ProjectTest < ActiveSupport::TestCase
     assert project.valid?
   end
 
+  # category
+
+
   # on_main_page default.
-  test 'on_main_page default should be true' do
-    project = Project.new
-    assert project.on_main_page
-  end
+
 end

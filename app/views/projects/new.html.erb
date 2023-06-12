@@ -1,0 +1,13 @@
+<h1>Create Project</h1>
+<%= form_with model: @project,class: 'flex flex-col' do |form| %>
+	<%= form.text_field :name, placeholder: "Project Name"%>
+	<%= form.text_area :description, placeholder: "Description/Project View"%>
+	<%= form.text_field :github, placeholder: "Github Link"%>
+	<%= form.select :category, ['ruby', 'rails', 'javascript'],placeholder:"Category" %>
+	<div>
+		<%= form.check_box :on_main_page%>
+		<%= form.label :on_main_page, 'Display on main page' %>
+	</div>
+
+	<%= form.submit "Create"%>
+<% end %>

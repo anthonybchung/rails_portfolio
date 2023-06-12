@@ -5,7 +5,7 @@ one:
   description: MyText
   position: 1
   github: https://github.com/anthonybchung/hotwire_search
-  category: MyString
+  category: 1
   on_main_page: false
 
 two:
@@ -13,5 +13,5 @@ two:
   description: MyText
   position: 1
   github: https://github.com/anthonybchung/hotwire_navbar
-  category: MyString
+  category: 2
   on_main_page: false

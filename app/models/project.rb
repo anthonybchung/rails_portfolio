@@ -7,7 +7,7 @@ class Project < ApplicationRecord
 
   VALID_GITHUB_LINK = /\Ahttps:\/\/github\.com\//i
   GITHUB_INVALID_MSG = 'Link must start with https://github.com'
-  validates :github, format: {with: VALID_GITHUB_LINK, message: GITHUB_INVALID_MSG}
+  validates :github, format: {with: VALID_GITHUB_LINK, message: GITHUB_INVALID_MSG},allow_blank: true,allow_nil: true
 
   enum :category, {ruby: 0, rails: 1, javascript:2}
 
@@ -19,4 +19,6 @@ class Project < ApplicationRecord
   def set_default_on_main_page
     self.on_main_page = true
   end
+
+
 end

@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   get '/playground',to: 'static_pages#playground'
   get '/resources',to: 'static_pages#resources'
   get '/login',to: 'static_pages#login'
+
+  # projects
+  resources :projects
 end
