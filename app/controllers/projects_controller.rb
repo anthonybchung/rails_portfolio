@@ -1,19 +1,20 @@
 class ProjectsController < ApplicationController
   def index
-
+    @project = Project.all
   end
 
   def create
-    puts params[@project]
-  end
-
-  def new
     @project = Project.new(project_params)
     if @project.save
-
+      flash[:success] = "Project #{@project.name} created."
+      redirect_to @project
     else
       render 'new', :unprocessable_entity
     end
+  end
+
+  def new
+    @project = Project.new
   end
 
   def edit

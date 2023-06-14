@@ -1,9 +1,9 @@
-<h1>Create Project</h1>
+<h1 class="text-2xl ml-14">Create Project</h1>
 <%= form_with model: @project,class: 'flex flex-col' do |form| %>
-	<%= form.text_field :name, placeholder: "Project Name"%>
-	<%= form.text_area :description, placeholder: "Description/Project View"%>
-	<%= form.text_field :github, placeholder: "Github Link"%>
-	<%= form.select :category, ['ruby', 'rails', 'javascript'],placeholder:"Category" %>
+	<%= form.text_field :name, placeholder: "Project Name", class: "w-60 mx-auto mt-9"%>
+	<%= form.text_area :description, placeholder: "Description/Project View", class: ' w-60 mx-auto mt-5'%>
+	<%= form.text_field :github, placeholder: "Github Link", class: 'w-60 mx-auto mt-5'%>
+	<%= form.select :category, %w[ruby rails javascript], {},{:class => 'w-60 mx-auto mt-5'} %>
 	<div>
 		<%= form.check_box :on_main_page%>
 		<%= form.label :on_main_page, 'Display on main page' %>
