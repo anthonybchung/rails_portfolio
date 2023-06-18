@@ -1,15 +1,19 @@
 class ProjectsController < ApplicationController
   def index
-    @project = Project.all
+    @projects = Project.all
   end
 
   def create
     @project = Project.new(project_params)
+    count = Project.count
+    @project.position = count + 1
     if @project.save
       flash[:success] = "Project #{@project.name} created."
-      redirect_to @project
+      redirect_to projects_path
     else
-      render 'new', :unprocessable_entity
+      flash.now[:notice] = "Project #{@project.name} can not be created"
+      puts flash.now[:notice]
+      render action: "new", status: :unprocessable_entity
     end
   end
 

@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsPortfolio</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+	<title>RailsPortfolio</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<%= csrf_meta_tags %>
+	<%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-  </head>
+	<%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+	<%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+</head>
 
-  <body>
-    <%= render "shared/header" %>
-    <main class="bg-red-100 w-full md:max-w-5xl md:mx-auto">
-      <%= yield %>
-    </main>
+<body>
+<%= render "shared/header" %>
+<main class="bg-red-100 w-full md:max-w-5xl md:mx-auto">
+	<% if flash[:success] %>
+		<p><%= flash[:success] %></p>
+		<% end %>
+	<% if flash.now[:notice] %>
+		<p><%= flash.now[:notice] %></p>
+		<p>hello</p>
+	<% end %>
+	<%= yield %>
+</main>
 
-  </body>
+</body>
 </html>
