@@ -1,4 +1,9 @@
 <h1 class="text-2xl ml-14">Create Project</h1>
+<% if @project.errors.any? %>
+	<% @project.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	<% end %>
 <%= form_with model: @project, class: 'flex flex-col' do |form| %>
 	<%= form.text_field :name, placeholder: "Project Name", class: "w-60 mx-auto mt-9"%>
 	<%= form.text_area :description, placeholder: "Description/Project View", class: ' w-60 mx-auto mt-5'%>
