@@ -1,21 +1,23 @@
-<h1 class="text-2xl ml-14">Create Project</h1>
-<% if @project.errors.any? %>
-	<% @project.errors.full_messages.each do |msg| %>
-		<li><%= msg %></li>
-		<% end %>
-	<% end %>
+<h1 class="text-2xl w-72 pl-3 mx-auto md:w-96">Create Project</h1>
 <%= form_with model: @project, class: 'flex flex-col' do |form| %>
-	<%= form.text_field :name, placeholder: "Project Name", class: "w-60 mx-auto mt-9"%>
-	<%= form.text_area :description, placeholder: "Description/Project View", class: ' w-60 mx-auto mt-5'%>
-	<%= form.text_field :github, placeholder: "Github Link", class: 'w-60 mx-auto mt-5'%>
-	<%= form.select :category, %w[ruby rails javascript], {},{:class => 'w-60 mx-auto mt-5'} %>
+	<%= form.text_field :name, placeholder: "Project Name", class: "w-60 mx-auto mt-9 #{'border-red-800 border-2 rounded' unless @project.errors.messages[:name].empty?}"
+		 %>
+	<div class="w-60 mx-auto mt-0 mb-2 text-xs text-red-800">
+		<%= @project.errors.messages[:name].first unless @project.errors.messages[:name].empty? %>
+	</div>
+	<%= form.text_area :description, placeholder: "Description/Project View", class: ' w-60 mx-auto mt-5' %>
+	<%= form.text_field :github, placeholder: "Github Link", class: "w-60 mx-auto mt-5 #{'border-red-800 border-2 rounded' unless @project.errors.messages[:github].empty?}" %>
+	<div class="w-60 mx-auto mt-0 mb-2 text-xs text-red-800">
+		<%= @project.errors.messages[:github].first unless @project.errors.messages[:github].empty? %>
+	</div>
+	<%= form.select :category, %w[ruby rails javascript], {}, { :class => 'w-60 mx-auto mt-5' } %>
 	<div class="w-60 mx-auto mt-9">
-		<%= form.check_box :on_main_page%>
+		<%= form.check_box :on_main_page %>
 		<%= form.label :on_main_page, 'Display on main page' %>
 	</div>
 	<div class="flex flex-row justify-end w-60 mt-5 mx-auto">
-		<%= form.submit "Create", class: 'py-1 px-4 bg-red-600 mx-4 rounded'%>
-		<%= link_to "Cancel",  projects_path, class: 'py-1 px-4 bg-red-600 rounded'%>
+		<%= form.submit "Create", class: 'py-1 px-4 bg-red-600 mx-4 rounded' %>
+		<%= link_to "Cancel", projects_path, class: 'py-1 px-4 bg-red-600 rounded' %>
 	</div>
 
 <% end %>

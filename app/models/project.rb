@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
-  validates :name, presence: true, uniqueness: true
+  NAME_INVALID_MSG = "Project Name has already been taken"
+  validates :name, presence: true, uniqueness: {message: NAME_INVALID_MSG}
 
   validates :description, length: {maximum: 750},presence: true
 

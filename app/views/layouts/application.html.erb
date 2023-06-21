@@ -13,12 +13,15 @@
 <body>
 <%= render "shared/header" %>
 <main class="bg-red-100 w-full md:max-w-5xl md:mx-auto">
-	<% if flash[:success] %>
-		<p><%= flash[:success] %></p>
+	<div class="w-72 h-4 pl-3 mb-2 mx-auto md:w-96">
+		<% if flash[:success] %>
+			<p><%= flash[:success] %></p>
 		<% end %>
-	<% if flash.now[:notice] %>
-		<p><%= flash.now[:notice] %></p>
-	<% end %>
+		<% if flash.now[:notice] %>
+			<p><%= flash.now[:notice] %></p>
+		<% end %>
+	</div>
+
 	<%= yield %>
 </main>
 
