@@ -13,8 +13,10 @@
 
 <section id="exercises" class="md:mt-14 px-2">
 	<h2 class="text-lg md:ml-20 md:text-3xl">Current Rails Exercises</h2>
-	<div class="mt-6 h-24 mx-auto w-auto md:h-56 md:w-4/5 bg-red-50">
-
+	<div class="mt-6 h-24 mx-auto w-auto flex flex-row md:h-56 md:w-4/5 bg-red-50">
+		<% @projects.each do |project| %>
+			<%= render partial: "static_pages/project_card", locals: {project: project} %>
+		<% end %>
 	</div>
 	<div class="text-right mr-2 mt-2 w-auto md:w-4/5 md:mx-auto">
 		<%= link_to "more exercises...",playground_path %>
