@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import NavController from "./nav_controller"
 application.register("nav", NavController)
+
+import SlideController from "./slide_controller"
+application.register("slide", SlideController)
