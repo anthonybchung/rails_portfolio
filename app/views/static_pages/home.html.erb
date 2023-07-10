@@ -15,20 +15,23 @@
 
 <section id="exercises" class="md:mt-14 px-2">
 	<h2 class="text-lg md:ml-20 md:text-3xl">Recent Rails Exercises</h2>
-	<div class="mt-6 h-24 mx-auto w-auto md:h-56 md:w-4/5">
-		<div class="overflow-x-hidden flex flex-row whitespace-nowrap w-full h-full">
-			<% @projects.each_with_index do |project, index| %>
-				<%= render partial: "static_pages/project_card", locals: { project: project, index: index } %>
-			<% end %>
+	<div class="mt-6 h-24 mx-auto w-auto md:h-56 md:w-4/5" data-controller="slide" data-slide-projects-value='<%= @projects.count %>'>
+		<div class="overflow-x-hidden  whitespace-nowrap w-full h-full" >
+			<div class= "relative flex flex-row h-full -left-10" data-slide-target="slidingWindow" >
+				<% @projects.each_with_index do |project, index| %>
+					<%= render partial: "static_pages/project_card", locals: { project: project, index: index } %>
+				<% end %>
+			</div>
+
 		</div>
 		<div class="flex flex-row justify-between px-3 relative -top-32">
-			<%= link_to "#1" do %>
+			<%= button_tag type: "button", data: { action: "slide#left"} do %>
 				<svg width="21" height="18" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M6.69998 11.2905C7.08998 10.9005 7.08998 10.2705 6.69998 9.88047L2.82998 6.00047L6.70998 2.12047C7.09998 1.73047 7.09998 1.10047 6.70998 0.710469C6.31998 0.320469 5.68998 0.320469 5.29998 0.710469L0.70998 5.30047C0.31998 5.69047 0.31998 6.32047 0.70998 6.71047L5.29998 11.3005C5.67998 11.6805 6.30998 11.6805 6.69998 11.2905Z" fill="black" fill-opacity="0.54"/>
 					<path d="M13.2898 11.2905C13.6798 10.9005 13.6798 10.2705 13.2898 9.88047L9.41982 6.00047L13.2998 2.12047C13.6898 1.73047 13.6898 1.10047 13.2998 0.710469C12.9098 0.320469 12.2798 0.320469 11.8898 0.710469L7.29982 5.30047C6.90982 5.69047 6.90982 6.32047 7.29982 6.71047L11.8898 11.3005C12.2698 11.6805 12.8998 11.6805 13.2898 11.2905Z" fill="black" fill-opacity="0.54"/>
 				</svg>
 			<% end %>
-			<%= link_to "#5" do %>
+			<%= button_tag type: "button", data: {action: "slide#right"} do %>
 				<svg width="21" height="18" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M7.29006 0.709778C6.90006 1.09978 6.90006 1.72978 7.29006 2.11978L11.1701 5.99978L7.29006 9.87978C6.90006 10.2698 6.90006 10.8998 7.29006 11.2898C7.68006 11.6798 8.31006 11.6798 8.70006 11.2898L13.2901 6.69978C13.6801 6.30978 13.6801 5.67978 13.2901 5.28978L8.70006 0.699778C8.32006 0.319778 7.68006 0.319778 7.29006 0.709778Z" fill="black" fill-opacity="0.54"/>
 					<path d="M0.700215 0.710469C0.310215 1.10047 0.310215 1.73047 0.700215 2.12047L4.58021 6.00047L0.700215 9.88047C0.310215 10.2705 0.310215 10.9005 0.700215 11.2905C1.09021 11.6805 1.72022 11.6805 2.11022 11.2905L6.70021 6.70047C7.09021 6.31047 7.09021 5.68047 6.70021 5.29047L2.12021 0.710469C1.73021 0.320469 1.09021 0.320469 0.700215 0.710469Z" fill="black" fill-opacity="0.54"/>
