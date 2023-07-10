@@ -10,7 +10,6 @@ export default class extends Controller {
     this.offSetValue = 0
     this.slidingWindowTarget.style.left = `${this.offSetValue}px`
     this.projectWindowValue = (this.projectsValue-4) * 160 *  -1
-    console.log(this.projectWindowValue)
   }
 
   left(){
@@ -30,8 +29,6 @@ export default class extends Controller {
     } else {
       this.offSetValue = this.projectWindowValue
     }
-
     this.slidingWindowTarget.style.left = `${this.offSetValue}px`
-    console.log(this.offSetValue)
   }
 }

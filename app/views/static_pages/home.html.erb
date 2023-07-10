@@ -17,7 +17,7 @@
 	<h2 class="text-lg md:ml-20 md:text-3xl">Recent Rails Exercises</h2>
 	<div class="mt-6 h-24 mx-auto w-auto md:h-56 md:w-4/5" data-controller="slide" data-slide-projects-value='<%= @projects.count %>'>
 		<div class="overflow-x-hidden  whitespace-nowrap w-full h-full" >
-			<div class= "relative flex flex-row h-full -left-10" data-slide-target="slidingWindow" >
+			<div class= "relative flex flex-row h-full -left-10 duration-200" data-slide-target="slidingWindow" >
 				<% @projects.each_with_index do |project, index| %>
 					<%= render partial: "static_pages/project_card", locals: { project: project, index: index } %>
 				<% end %>
